@@ -26,7 +26,7 @@ end
 
 # Serve the gems (when they finish mirroring)
 web_app "apt_mirror" do
-  docroot "#{node.apt_mirror.data_dir}/mirror"
+  docroot "#{node.apt_mirror.data_dir}/mirror/archive.ubuntu.com"
   hostname node.apt_mirror.apache.listen_hostname
   port node.apt_mirror.apache.listen_port
 end
