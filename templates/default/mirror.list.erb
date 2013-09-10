@@ -6,7 +6,11 @@ set base_path    <%= node.apt_mirror.data_dir %>
 # set skel_path    $base_path/skel
 # set var_path     $base_path/var
 # set cleanscript $var_path/clean.sh
+<% if node.apt_mirror.architecture %>
+set defaultarch <%= node.apt_mirror.architecture %>
+<% else %>
 # set defaultarch  <running host architecture>
+<% end %>
 # set postmirror_script $var_path/postmirror.sh
 # set run_postmirror 0
 set nthreads     20
@@ -14,16 +18,16 @@ set _tilde 0
 #
 ############# end config ##############
 
-deb http://archive.ubuntu.com/ubuntu raring main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu raring-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu raring-updates main restricted universe multiverse
-#deb http://archive.ubuntu.com/ubuntu raring-proposed main restricted universe multiverse
-#deb http://archive.ubuntu.com/ubuntu raring-backports main restricted universe multiverse
+deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %> main restricted universe multiverse
+deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
+deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
+#deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
+#deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
 
-deb-src http://archive.ubuntu.com/ubuntu raring main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu raring-security main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu raring-updates main restricted universe multiverse
-#deb-src http://archive.ubuntu.com/ubuntu raring-proposed main restricted universe multiverse
-#deb-src http://archive.ubuntu.com/ubuntu raring-backports main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %> main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
+#deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
+#deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
 
-clean http://archive.ubuntu.com/ubuntu
+clean <%= node.apt_mirror.remote_apt %>
