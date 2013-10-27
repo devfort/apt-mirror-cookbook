@@ -16,6 +16,7 @@ end
     owner node.apt_mirror.user
     group node.apt_mirror.user
     mode "0644"
+    recursive true
   end
 end
 
