@@ -19,16 +19,16 @@ set _tilde 0
 ############# end config ##############
 
 # TODO: Automate generation of these entries from attributes?
-deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %> main restricted universe multiverse
-deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
-deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
-deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
-deb <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
+deb <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %> main restricted universe multiverse
+deb <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
+deb <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
+deb <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
+deb <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
 
-deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %> main restricted universe multiverse
-deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
-deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
-deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
-deb-src <%= node.apt_mirror.remote_apt %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %> main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-security main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-updates main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-proposed main restricted universe multiverse
+deb-src <%= node.apt_mirror.remote %> <%= node.apt_mirror.release %>-backports main restricted universe multiverse
 
-clean <%= node.apt_mirror.remote_apt %>
+clean <%= node.apt_mirror.remote %>

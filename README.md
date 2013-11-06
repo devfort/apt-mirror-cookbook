@@ -18,7 +18,7 @@ Cookbook attributes are named under the `apt_mirror` namespace.
 
 * `node['apt_mirror']['user']` - user to host apt mirror as, defaults to `fort`
 * `node['apt_mirror']['data_dir']` - directory to store apt mirror in, defaults to '/data/apt'
-* `default['apt_mirror']['remote_apt']` - URL for the remote apt instance to mirror, defaults to `http://archive.ubuntu.com/ubuntu`
+* `default['apt_mirror']['remote']` - URL for the remote apt instance to mirror, defaults to `http://archive.ubuntu.com/ubuntu`
 * `default['apt_mirror']['release']` - [release codename](https://wiki.ubuntu.com/DevelopmentCodeNames) to mirror packages for, defaults to `raring` (for 13.04)
 * `default['apt_mirror']['architecture']` - CPU architecture to mirror packages for, defaults to `amd64`. If unset, uses the host architecture.
 

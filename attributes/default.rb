@@ -1,7 +1,7 @@
 default['apt_mirror']['user'] = 'fort'
 default['apt_mirror']['data_dir'] = '/data/apt'
 
-default['apt_mirror']['remote_apt'] = 'http://archive.ubuntu.com/ubuntu'
+default['apt_mirror']['remote'] = 'http://archive.ubuntu.com/ubuntu'
 default['apt_mirror']['release'] = 'raring'
 default['apt_mirror']['architecture'] = 'amd64'
 
