@@ -7,3 +7,4 @@ default['apt_mirror']['architecture'] = 'amd64'
 
 default['apt_mirror']['apache']['listen_hostname'] = 'apt.fort'
 default['apt_mirror']['apache']['listen_port'] = '80'
+default['apt_mirror']['client_uri'] = 'http://apt.fort/'
